@@ -1,0 +1,236 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      background-color: #f44336;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .header input {
+      width: 30%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      margin-right: 5px;
+    }
+
+    .header button {
+      width: 20%;
+      padding: 10px;
+      background-color: #555;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 4px;
+    }
+
+    .header button:hover {
+      background-color: #444;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    ul li {
+      background: #f9f9f9;
+      padding: 10px 15px;
+      border-bottom: 1px solid #ddd;
+      font-size: 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    ul li:nth-child(odd) {
+      background: #eee;
+    }
+
+    ul li.checked {
+      background: #888;
+      color: white;
+      text-decoration: line-through;
+    }
+
+    ul li .close {
+      cursor: pointer;
+      color: #888;
+      font-size: 18px;
+    }
+
+    ul li .close:hover {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <h2>My To Do List</h2>
+  <input type="text" id="taskTitle" placeholder="Task Title...">
+  <input type="text" id="taskDescription" placeholder="Task Description...">
+  <button onclick="addTask()">Add</button>
+</div>
+
+<ul id="taskList"></ul>
+
+<script>
+  // Function to add a new task
+  function addTask() {
+    const taskTitleInput = document.getElementById("taskTitle");
+    const taskDescriptionInput = document.getElementById("taskDescription");
+    const taskTitle = taskTitleInput.value.trim();
+    const taskDescription = taskDescriptionInput.value.trim();
+
+    if (taskTitle === "" || taskDescription === "") {
+      alert("Please enter both title and description!");
+      return;
+    }
+
+    const taskList = document.getElementById("taskList");
+    const li = document.createElement("li");
+
+    li.innerHTML = `
+      <span><strong>${taskTitle}</strong>: ${taskDescription}</span>
+      <span class="close" onclick="removeTask(this)">×</span>
+    `;
+
+    li.addEventListener("click", function (event) {
+      if (event.target.tagName !== "SPAN" || !event.target.classList.contains("close")) {
+        this.classList.toggle("checked");
+      }
+    });
+
+    // Add the new task to the top of the list
+    taskList.prepend(li);
+
+    // Clear the input fields
+    taskTitleInput.value = "";
+    taskDescriptionInput.value = "";
+  }
+
+  // Function to remove a task
+  function removeTask(closeButton) {
+    const task = closeButton.parentElement;
+    task.remove();
+  }
+</script>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Array 2D Table</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      border: 1px solid #da2929;
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  <table>
+    <!-- <thead>
+      <tr>
+        <th>ID</th>
+        <th>Status</th>
+        <th>Language</th>
+      </tr>
+    </thead> -->
+    <tbody>
+      <script>
+        const lang = [
+          { id: 1, status: 'ACTIVE', lang: 'Dush' },
+          { id: 2, status: 'INVITED', lang: 'Thai' },
+          { id: 3, status: 'INVITED', lang: 'English' },
+          { id: 4, status: 'DELETE', lang: 'Dush' },
+          { id: 5, status: 'DELETE', lang: 'Thai' },
+          { id: 6, status: 'INVITED', lang: 'English' },
+          { id: 7, status: 'ACTIVE', lang: 'Dush' },
+          { id: 8, status: 'SUSPENDED', lang: 'English' },
+          { id: 9, status: 'ACTIVE', lang: 'Thai' },
+          { id: 10, status: 'ACTIVE', lang: 'Dush' },
+          { id: 11, status: 'SUSPENDED', lang: 'English' },
+          { id: 12, status: 'ACTIVE', lang: 'English' },
+          { id: 13, status: 'DELETE', lang: 'Thai' },
+          { id: 14, status: 'ACTIVE', lang: 'English' },
+          { id: 15, status: 'DELETE', lang: 'Dush' },
+        ];
+
+        // จำนวนข้อมูลที่มีใน lang
+        const currentDataLength = lang.length;
+
+        // กำหนดจำนวนช่องทั้งหมดใน array 2 มิติ (10x10 = 100)
+        const totalCells = 10 * 10;
+
+        // เพิ่มข้อมูลที่เหลือให้ครบ
+        const expandedLang = [...lang];
+
+        // เติมข้อมูลที่ขาดหายไปด้วยค่า default
+        for (let i = currentDataLength; i < totalCells; i++) {
+          expandedLang.push({ id: i + 1, status: 'default', lang: 'default' });
+        }
+
+        // แทนที่ index ใหม่ไปในตำแหน่งที่ต้องการ (16, 17, 18)
+        expandedLang[15] = { id: 16, status: 'ACTIVE', lang: 'Spanish' };
+        expandedLang[16] = { id: 17, status: 'ACTIVE', lang: 'Spanish' };
+        expandedLang[17] = { id: 18, status: 'ACTIVE', lang: 'Japan' };
+        
+        // สร้าง array 2 มิติ
+        const twoDimensionalArray = [];
+        while (expandedLang.length) {
+          twoDimensionalArray.push(expandedLang.splice(0, 10));  // แบ่งข้อมูลทุกๆ 10 ช่อง
+        }
+
+        // แสดงข้อมูลในตาราง HTML
+        const tbody = document.querySelector('tbody');
+        twoDimensionalArray.forEach(row => {
+          const tr = document.createElement('tr');
+          row.forEach(cell => {
+            const td = document.createElement('td');
+            td.textContent = `${cell.id} - ${cell.status} - ${cell.lang}`;
+            tr.appendChild(td);
+          });
+          tbody.appendChild(tr);
+        });
+
+        // การเข้าถึงข้อมูลในตำแหน่ง (x, y)
+        const x = [1];  // แถวที่ 2
+        const y = [5];  // คอลัมน์ที่ 3
+        const cell = twoDimensionalArray[x][y];
+        console.log(cell);  
+      </script>
+    </tbody>
+  </table>
+</body>
+</html>
+
+
+
+
