@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ethereum Classic Mining Pool</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    /* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #f4f4f4;
+  line-height: 1.6;
+}
+
+/* Header Section */
+header {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar h1 {
+  font-size: 1.5em;
+}
+
+.countdown {
+  font-size: 0.9em;
+  text-align: right;
+}
+
+/* Main Header */
+.main-header {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.main-header h2 {
+  font-size: 1.8em;
+  color: #4CAF50;
+}
+
+/* Stats Section */
+.stats-section {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px 10px;
+}
+
+.stat-box {
+  background: white;
+  border: 1px solid #ddd;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  width: 200px;
+  font-size: 1em;
+}
+
+.stat-box span {
+  display: block;
+  margin-top: 10px;
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+/* Features and Recent Blocks */
+.content-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+}
+
+.features, .recent-blocks {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  width: 48%;
+}
+
+.features ul {
+  list-style: none;
+}
+
+.features ul li {
+  padding: 5px 0;
+}
+
+/* Recent Blocks Table */
+.recent-blocks table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.recent-blocks th, .recent-blocks td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+/* Connection Settings */
+.connection-settings {
+  padding: 20px;
+}
+
+.connection-settings table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.connection-settings th, .connection-settings td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+</style>
+<body>
+  <header>
+    <div class="navbar">
+      <h1>etc.nanopool.org</h1>
+      <div class="countdown">
+        <span>Next DAG Epoch</span>
+        <span>01:14:59:08</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="main-header">
+      <h2>Ethereum Classic Mining Pool</h2>
+    </div>
+
+    <div class="stats-section">
+      <div class="stat-box">
+        <p>Pool Hashrate</p>
+        <span>429.7 Gh/s</span>
+      </div>
+      <div class="stat-box">
+        <p>Blocks mined (last 24 hours)</p>
+        <span>9+0</span>
+      </div>
+      <div class="stat-box">
+        <p>Miners</p>
+        <span>872</span>
+      </div>
+      <div class="stat-box">
+        <p>ETC Price</p>
+        <span>$24.71 0.26mB</span>
+      </div>
+    </div>
+
+    <div class="content-section">
+      <div class="features">
+        <h3>Features</h3>
+        <ul>
+          <li>World-wide mining pool</li>
+          <li>Regular payouts</li>
+          <li>Nicehash compatible</li>
+          <li>Friendly support</li>
+          <li>Optimized infrastructure</li>
+          <li>Email notifications</li>
+          <li>Adjustable payout limit</li>
+          <li>3rd party apps: iOS/Android</li>
+        </ul>
+      </div>
+
+      <div class="recent-blocks">
+        <h3>Recent Blocks</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Number</th>
+              <th>Reward</th>
+              <th>Miner</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2 hours ago</td>
+              <td>21469092</td>
+              <td>2.17</td>
+              <td><a href="#">0xf5d90cca9...</a></td>
+            </tr>
+            <!-- Add more rows as needed -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="connection-settings">
+        <h3>Connection Settings</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Region</th>
+              <th>Europe</th>
+              <th>USA</th>
+              <th>Other</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Host</td>
+              <td>
+                etc-eu1.nanopool.org<br>
+                etc-eu2.nanopool.org
+              </td>
+              <td>
+                etc-us-east1.nanopool.org<br>
+                etc-us-west1.nanopool.org
+              </td>
+              <td>
+                etc-asia1.nanopool.org<br>
+                etc-jp1.nanopool.org<br>
+                etc-au1.nanopool.org
+              </td>
+            </tr>
+            <tr>
+              <td>SSL Stratum Port</td>
+              <td colspan="3">10143</td>
+            </tr>
+            <tr>
+              <td>Stratum Port</td>
+              <td colspan="3">10100</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+  </main>
+</body>
+</html>

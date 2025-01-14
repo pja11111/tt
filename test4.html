@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table with Footer Column Index</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #da2929;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .blue-cell {
+            background-color: #add8e6;  /* สีฟ้า */
+        }
+    </style>
+</head>
+<body>
+
+    <table id="table"></table> <!-- Table element to display the result -->
+
+    <script>
+        // ข้อมูลต้นทางที่ต้องการสร้างตาราง
+        const data = [66, 44, 23, 78, 90, 34, 89, 23, 90, 35];
+
+        // ฟังก์ชันสร้างตาราง 2D
+        function create2DArray(arr) {
+            let result = [];
+            console.log("1",arr.length)
+            for (let x = 0; x < arr.length; x++) { // ลูปจากบนลงล่าง
+            let row = [];
+             for (let y = arr.length- 1; y >= 0; y--) {
+                    console.log("2",y);
+                    
+                    // const index = x * arr.length + y;
+                    // const value = index < arr.length ? `[${arr[index]}]` : [x, y].toString();
+                    row.push([x, y].toString());
+                }
+                result.push(row);
+            }
+            return result;
+        }
+
+        // เรียกฟังก์ชันเพื่อสร้างตาราง 2D จากข้อมูลใน data
+        const result = create2DArray(data);
+
+        // แสดงผลตารางใน HTML
+       console.table(result)
+
+
+       const x = 0;
+const y = -1;
+const celltable = result[x][y];  // ดึงค่าจากตารางที่ตำแหน่ง [0][5]
+console.log(celltable);
+    </script>
+
+</body>
+</html>

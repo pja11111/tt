@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethereum Classic Mining Pool</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .header {
+            background-color: #4CAF50; 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            padding: 10px 20px; 
+            color: white;
+            width: 100%;
+            height: 60px;
+            box-sizing: border-box;
+            position: fixed; /* Fix the header at the top */
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+        .header .navbar {
+            display: flex; 
+            align-items: center;
+        }
+        .header .navbar .epoch {
+            padding: 5px 10px; 
+            margin-right: 15px; 
+            font-weight: bold; 
+        }
+        .header .navbar a {
+            margin-right: 15px;
+            color: rgb(255, 255, 255); 
+            text-decoration: none; 
+            font-weight: bold; 
+        }
+        .header .navbar a:hover {
+            text-decoration: underline;
+            border: 15px solid gray;
+            background-color: #979090;
+            box-sizing: border-box;
+        }
+        .header .rightbar {
+            display: flex; 
+            align-items: center;
+        }
+        .discord {
+            margin: 0; 
+            justify-content: start;
+            padding-left: 0%;
+        }
+
+        .dashboard {
+        max-width: 100%;
+        padding: 20px;
+        background-color: white;
+        text-align: center;
+        margin-top: 50px;
+        }
+
+        .dashboard h2 {
+        color: #2c3e50;
+        margin-bottom: 20px;
+        }
+
+        .container {
+        position: relative;
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin: 0px;
+        padding: 0px;
+    }
+            
+
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .stat-box {
+            background-color: #4caf50;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            display: flex;
+            margin: 0 10px;
+            font-size: 18px;
+        }
+
+        .stat-box:first-child {
+            margin-left: 0;
+        }
+
+        .stat-box:last-child {
+            margin-right: 0;
+        }
+
+        .features, .recent-blocks, .connection-settings {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            border-bottom: 2px solid #4caf50;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 20px;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+        }
+
+        .table th, .table td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        .table th {
+            background-color: #f4f4f4;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            padding: 8px 0;
+            font-size: 16px;
+        }
+
+        .feature-list li:before {
+            content: "\2713";
+            color: #4caf50;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .connection-settings table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .connection-settings th, .connection-settings td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .connection-settings th {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="navbar">
+            <div class="epoch">Next DAG Epoch<br>03:05:16:38</div>
+            <a href="#">etc.nanopool.org</a>
+            <a href="#">Home</a>
+            <a href="#">Stats</a>
+            <a href="#">Blocks</a>
+            <a href="#">API</a>
+            <a href="#">Help</a>
+            <a href="#">Pools ▼</a>
+        </div>
+        <div class="rightbar">
+            <select>
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="BTC">BTC</option>
+            </select>
+            <input type="text" placeholder="Address">
+            <button>Search</button>
+        </div>
+    </div>
+    
+        <div class="dashboard">
+            <div class=discord >
+                <h4>@everyone #ZEPH pool: compensation of 120 Zeph coins  (15 blocks equivalent) were distributed to miners for 27 hours of orphan blocks on 14th October. We are sorry for inconvenience.</h4></div>
+            <h2>Ethereum Classic Mining Pool</h2>
+
+    <div class="container">
+        <div class="stats">
+            <div class="stat-box">Pool Hashrate<br><strong>400.8 Gh/s</strong></div>
+            <div class="stat-box">Blocks mined (last 24 hours)<br><strong>6 + 1</strong></div>
+            <div class="stat-box">Miners<br><strong>877</strong></div>
+            <div class="stat-box">ETC Price<br><strong>$23.91 0.25mB</strong></div>
+        </div>
+
+        <div class="features">
+            <h2>Features</h2>
+            <ul class="feature-list">
+                <li>World-wide mining pool</li>
+                <li>Regular payouts</li>
+                <li>Nicehash compatible</li>
+                <li>Friendly support</li>
+                <li>Optimized infrastructure</li>
+                <li>Email notifications</li>
+                <li>Adjustable payout limit</li>
+                <li>3rd party apps: iOS/Android</li>
+            </ul>
+        </div>
+
+        <div class="recent-blocks">
+            <h2>Recent Blocks</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Number</th>
+                        <th>Reward</th>
+                        <th>Miner</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>3 hours ago</td>
+                        <td>21462835</td>
+                        <td>2.11</td>
+                        <td>0xc5384cdd8f88a1e095f11bade9c5d3e81a2438</td>
+                    </tr>
+                    <tr>
+                        <td>4 hours ago</td>
+                        <td>21462598</td>
+                        <td>2.04</td>
+                        <td>0x199d09c723b4e5c5a552014767e8c45c3e51f77</td>
+                    </tr>
+                    <tr>
+                        <td>8 hours ago</td>
+                        <td>21461489</td>
+                        <td>2.04</td>
+                        <td>0x72956d4b98478ed83932740b29ebd369aed9fc03</td>
+                    </tr>
+                    <tr>
+                        <td>13 hours ago</td>
+                        <td>21460311</td>
+                        <td>2.06</td>
+                        <td>0x6d67565dc34ff1571e38b82e8f6b9b77877c6ece9</td>
+                    </tr>
+                    <tr>
+                        <td>16 hours ago</td>
+                        <td>21459511</td>
+                        <td>2.04</td>
+                        <td>0x3979b746bb61eb0d0ef4e57d2944df77a2e1b5fa</td>
+                    </tr>
+                    <tr>
+                        <td>17 hours ago</td>
+                        <td>21459082</td>
+                        <td>2.04</td>
+                        <td>0xa7401b662cdcf0f6cf08fa4a04743de7ea4582b0a</td>
+                    </tr>
+                    <tr>
+                        <td>20 hours ago</td>
+                        <td>21458454</td>
+                        <td>2.04</td>
+                        <td>0x4a4b712627c907619346bbc5a59befc8ef176cc9</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="connection-settings">
+            <h2>Connection Settings</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Region</th>
+                        <th>Host</th>
+                        <th>SSL Stratum Port</th>
+                        <th>Stratum Port</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Europe</td>
+                        <td>etc-eu1.nanopool.org, etc-eu2.nanopool.org</td>
+                        <td>10143</td>
+                        <td>10100</td>
+                    </tr>
+                    <tr>
+                        <td>USA</td>
+                        <td>etc-us-east1.nanopool.org, etc-us-west1.nanopool.org</td>
+                        <td>10143</td>
+                        <td>10100</td>
+                    </tr>
+                    <tr>
+                        <td>Other</td>
+                        <td>etc-asia1.nanopool.org, etc-jp1.nanopool.org, etc-au1.nanopool.org</td>
+                        <td>10143</td>
+                        <td>10100</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

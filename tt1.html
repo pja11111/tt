@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ซ้ายบน</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #da2929;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .highlight {
+            background-color: #add8e6; /* สีฟ้า */
+        }
+    </style>
+</head>
+<body>
+
+    <table id="table"></table>
+
+    <script>
+        const data = [66, 44, 23, 78, 90, 34, 89, 23, 90, 35];
+
+        // ฟังก์ชันสร้างตาราง 2D
+        function create2DArray(arr) {
+            let result = [];
+            for (let x = 0; x < arr.length; x++) {
+                let row = [];
+                for (let y = 0; y < arr.length; y++) {
+                    // ใช้แค่ index x, y ในแต่ละตำแหน่ง
+                    // row.push(`[${x}, ${y}]`); // แสดง index ในทุกเซลล์
+                    const index = x * arr.length + y;
+                    const value = index < arr.length ? `[${arr[index]}]` : [x, y];
+                    row.push(value);
+                }
+                result.push(row);
+            }
+            return result;
+        }
+
+        // เรียกฟังก์ชันสร้างตาราง
+        const result = create2DArray(data);
+
+        // แสดงตารางใน HTML
+        const table = document.getElementById('table');
+
+        result.forEach((row, rowIndex) => {
+            const tr = document.createElement('tr');
+            row.forEach((cell, cellIndex) => {
+                const td = document.createElement('td');
+                td.innerText = cell;
+
+                // แสดง highlight ที่ตำแหน่ง [0, 0]
+                if (rowIndex === 0 && cellIndex === 0) {
+                    td.classList.add('highlight');
+                }
+
+                tr.appendChild(td);
+            });
+            table.appendChild(tr);
+        });
+
+        // แสดงค่าจากตำแหน่ง [0][0] ใน console
+        const x = 0;
+        const y = 0;
+        const celltable = result[x][y]
+        console.log(result[x][y]);
+    </script>
+
+</body>
+</html>
+
+
+
